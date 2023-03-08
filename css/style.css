@@ -44,6 +44,10 @@ body{
     color: var(--text-color);
 
 }
+
+
+
+
 .container{
     max-width: 1400px;
     margin: 0 auto;
@@ -54,6 +58,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: -10rem 0;
 }
 .greeting-text{
     border-radius:2rem;
@@ -114,7 +119,6 @@ h2 > .magic {
   /*  */
 
   .cast {
-    height: 100vh;
     padding: 1rem;
 }
 .header {
@@ -236,7 +240,12 @@ img{
     font-weight: 600;
     font-size: 3rem;
     color: #3A1078;
+
+    cursor: pointer;
+    transition: 1s ;
 }
+
+
 /*  */
 .anna-bg{
     background-color: #393053;
@@ -276,11 +285,47 @@ img{
 flex-direction: row-reverse;
 }
 
+
+.description-even{
+    position: absolute;
+    border-radius: 1.25rem;
+    font-size: 1em;
+    padding: 2rem;
+    bottom: -1.5rem;
+    right: -3.5rem;
+}
+.description-odd{
+    position: absolute;
+    border-radius: 1.25rem;
+    font-size: 1em;
+    padding: 2rem;
+    bottom: -1.5rem;
+    left: -3.5rem;
+}
+.d-anna{
+    background-color:#5D3891;
+}
+.d-saule{
+    background-color: #D9ACF5;
+}
+.d-nastya{
+    background-color: #FFF6BF;
+}
+.d-renata{
+    background-color: #D2DAFF;
+}
+.d-linara{
+    background-color: #88A47C;
+}
+.d-lina{
+    background-color: #FED049;
+}
+
 @media screen and (max-width:1500px) {
     .member{
         flex-direction: column;
         gap: 4rem;
-        padding: 3rem;
+        padding: 3rem 3rem 6rem 3rem;
     }
     
     .member:nth-child(even){
@@ -298,6 +343,14 @@ flex-direction: row-reverse;
 }
 
 @media screen and (max-width:955px) {
+    .member{
+        padding: 3rem 3rem 5rem 3rem;
+    }
+    .description-even,.description-odd{
+        bottom: -2.5rem;
+        transform: scale(0.8);
+    }
+    
     .greeting-text{
         padding: 2rem;
         letter-spacing: 0.04rem;
@@ -312,7 +365,7 @@ flex-direction: row-reverse;
 
 @media screen and (max-width:750px) {
     .member{
-        padding: 2rem;
+        padding: 3rem 3rem 5rem 3rem;
         transform: scaleX(1.1);
     }
     .greeting-text{
@@ -334,6 +387,16 @@ flex-direction: row-reverse;
     }
 }
 @media screen and (max-width:550px) {
+    .member{
+        padding: 1.25rem  1.25rem 3.25rem 1.25rem;
+        border-radius: 2.5rem;
+    }
+    .description-even,.description-odd{
+        bottom: -2.5rem;
+        transform: scale(0.65);
+    }
+    .description-even{right: -5rem}
+    .description-odd{left: -5rem}
     .member-text h2{
         font-size: 1.85rem;
     }
@@ -343,6 +406,10 @@ flex-direction: row-reverse;
 }
 
 @media screen and (max-width:450px) {
+    .description-even,.description-odd{
+        transform: scale(0.5);
+    }
+
     .greeting-text{
         padding: 1rem;
         letter-spacing: 0.03rem;
@@ -353,8 +420,7 @@ flex-direction: row-reverse;
         gap: 0.5rem;
     }
     .member{
-        padding: 1.25rem;
-        border-radius: 2.5rem;
+        padding: 1.25rem  1.25rem 2.6rem 1.25rem;
         gap: 2rem;
         margin: 2rem;
         transform: scaleX(1);
@@ -404,3 +470,76 @@ flex-direction: row-reverse;
 .lina-bg .member-text p{
     background-color: #FCE22A;
 }
+
+
+
+
+.wrapper .icon {
+    bottom: 2rem;
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 0 0 2rem 2rem;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+.icon:hover path{
+    fill:white;
+}
+  
+
+ 
