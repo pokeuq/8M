@@ -471,6 +471,17 @@ flex-direction: row-reverse;
     background-color: #FCE22A;
 }
 
+.ula-bg{
+    background-color: #FDD36A;
+    color: #191825;
+}
+.ula-bg .member-text h2{
+    color: #191825;
+}
+.ula-bg .member-text p{
+    background-color: #F2921D;
+}
+
 
 
 
@@ -537,7 +548,7 @@ flex-direction: row-reverse;
     background: #1DA1F2;
     color: #ffffff;
   }
-path{
+  path{
     transition: .5s;
   }
 .icon:hover path{
