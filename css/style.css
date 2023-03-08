@@ -537,6 +537,9 @@ flex-direction: row-reverse;
     background: #1DA1F2;
     color: #ffffff;
   }
+path{
+    transition: .5s;
+  }
 .icon:hover path{
     fill:white;
 }
